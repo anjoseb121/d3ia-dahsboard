@@ -7,6 +7,7 @@ import worlddata from "./world";
 import {range} from "d3-array";
 import {scaleThreshold} from "d3-scale";
 import {geoCentroid} from "d3-geo";
+import StreamGraph from "./components/stream-graph/StreamGraph";
 
 const appData = worlddata.features.filter(d => geoCentroid(d)[0] < -20)
 
@@ -28,8 +29,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Dashboard</h2>
         </div>
-          <WorldMap colorScale={colorScale} data={appData} size={[500,400]} />
-          <BarChart colorScale={colorScale} data={appData}  size={[500,400]} />
+          <StreamGraph colorScale={colorScale} data={appData} size={[1000, 250]} />
+          <WorldMap colorScale={colorScale} data={appData} size={[500, 400]} />
+          <BarChart colorScale={colorScale} data={appData}  size={[500, 400]} />
       </div>
     );
   }
