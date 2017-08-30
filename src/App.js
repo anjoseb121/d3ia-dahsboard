@@ -22,7 +22,12 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.onResize = this.onResize.bind(this);
-        this.state = { screenWidth: 1000, screenHeight: 500 }
+        this.onHover = this.onHover.bind(this);
+        this.state = { screenWidth: 1000, screenHeight: 500, hover: "none"}
+    }
+
+    onHover(d) {
+        this.setState({ hover: d.id })
     }
 
     componentDidMount() {
@@ -45,9 +50,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Dashboard</h2>
         </div>
-          <StreamGraph colorScale={colorScale} data={appData} size={[this.state.screenWidth, this.state.screenHeight / 2]} />
-          <WorldMap colorScale={colorScale} data={appData} size={[this.state.screenWidth / 3, this.state.screenHeight / 2]} />
-          <BarChart colorScale={colorScale} data={appData}  size={[this.state.screenWidth / 3, this.state.screenHeight / 2]} />
+          <StreamGraph hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={appData} size={[this.state.screenWidth, this.state.screenHeight / 2]} />
+          <WorldMap hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={appData} size={[this.state.screenWidth / 3, this.state.screenHeight / 2]} />
+          <BarChart hoverElement={this.state.hover} onHover={this.onHover} colorScale={colorScale} data={appData}  size={[this.state.screenWidth / 3, this.state.screenHeight / 2]} />
       </div>
     );
   }

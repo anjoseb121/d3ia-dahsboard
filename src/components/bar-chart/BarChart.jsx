@@ -66,9 +66,10 @@ class BarChart extends Component {
             .attr('y', d => this.props.size[1] - yScale(sum(d.data)))
             .attr('height', d => yScale(sum(d.data)))
             .attr('width', barWidth)
-            .style('fill', (d, i) => this.props.colorScale(d.launchday))
+            .style('fill', (d, i) => this.props.hoverElement === d.id ? '#FCBC34' : this.props.colorScale(d.launchday))
             .style('stroke', 'black')
             .style('stroke-opacity', 0.25);
+
     }
 
     render() {

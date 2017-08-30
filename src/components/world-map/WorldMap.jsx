@@ -14,7 +14,8 @@ class WorldMap extends Component {
                 key={'path' + i}
                 d={pathGenerator(d)}
                 className='countries'
-                style={{fill: this.props.colorScale(d.launchday), stroke: "black", strokeOpacity: 0.5}}/>);
+                onMouseEnter={() => { this.props.onHover(d) } }
+                style={{fill: this.props.hoverElement === d.id ? '#FCBC34' : this.props.colorScale(d.launchday), stroke: "black", strokeOpacity: 0.5}}/>);
         return <svg width={this.props.size[0]} height={this.props.size[1]}>
             {countries}
         </svg>
