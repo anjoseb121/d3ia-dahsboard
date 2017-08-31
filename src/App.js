@@ -4,6 +4,7 @@ import './App.css';
 import SimpleScatter from "./components/simple-scatter/SimpleScatter";
 import SimpleBar from "./components/simple-bar/SimpleBar";
 import TwoLevelPie from "./components/two-level-pie/TwoLevelPie";
+import SimpleHorizontalBar from "./components/simple-horizontal-bar/SimpleHorizontalBar";
 
 class App extends Component {
 
@@ -26,15 +27,14 @@ class App extends Component {
         return (
         <div className="App">
             <div className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
                 <h2>Dashboard</h2>
             </div>
-        <div>
-            <TwoLevelPie height={this.state.screenHeight} width={this.state.screenWidth}/>
-            <SimpleBar height={this.state.screenHeight} width={this.state.screenWidth} />
-            <SimpleScatter height={this.state.screenHeight} width={this.state.screenWidth}/>
-        </div>
-
+            <div className="container">
+                <TwoLevelPie height = {this.state.screenHeight} width = {this.state.screenWidth}/>
+                <SimpleHorizontalBar height = {this.state.screenHeight} width = {this.state.screenWidth}/>
+                <SimpleBar height = {this.state.screenHeight} width = {this.state.screenWidth} />
+                {/*<SimpleScatter height={this.state.screenHeight} width={this.state.screenWidth}/>*/}
+            </div>
         </div>
     );
   }
