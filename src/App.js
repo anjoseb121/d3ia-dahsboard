@@ -44,7 +44,7 @@ class App extends Component {
                 <TwoLevelPie data={data} height={this.state.screenHeight} width={this.state.screenWidth}/>
                 <SimpleHorizontalBar data={data} height={this.state.screenHeight} width={this.state.screenWidth}/>
                 <SimpleBar data={data} height={this.state.screenHeight} width={this.state.screenWidth} />
-                {/*<SimpleScatter height={this.state.screenHeight} width={this.state.screenWidth}/>*/}
+                <SimpleScatter height={this.state.screenHeight} width={this.state.screenWidth}/>
             </div>
         </div>
     );

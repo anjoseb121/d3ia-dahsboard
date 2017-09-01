@@ -4,7 +4,6 @@ import {Cell, Pie, PieChart, Tooltip} from "recharts";
 const outerData = [
     {name: 'Part A', value: 400},
     {name: 'Part B', value: 300},
-    {name: 'Part C', value: 300},
     {name: 'Part D', value: 200}
     ];
 
@@ -16,8 +15,6 @@ const innerData = [
     {name: 'B3', value: 40},
     {name: 'B4', value: 30},
     {name: 'B5', value: 50},
-    {name: 'C1', value: 100},
-    {name: 'C2', value: 200},
     {name: 'D1', value: 150},
     {name: 'D2', value: 50}];
 

@@ -4,6 +4,7 @@ import {Bar, BarChart, CartesianGrid, Cell, Label, Tooltip, XAxis, YAxis} from "
 
 const COLORS = ['#7D93F7', '#A6DECF'];
 
+const formatter = (value) => `Org ${value}`;
 
 class SimpleBar extends Component {
 
@@ -21,7 +22,7 @@ class SimpleBar extends Component {
                 width={this.props.width / 1.57 }
                 height={this.props.height / 3}
                 data={barData} >
-                <XAxis dataKey="name"/>
+                <XAxis tickFormatter={formatter} dataKey="name"/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3" />
                 <Tooltip />
